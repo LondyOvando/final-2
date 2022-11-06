@@ -1,0 +1,76 @@
+<header class="p-3 bg-success text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Oreja"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="#" class="nav-link px-2 text-white"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font></font></a></li>
+          <li><a href="#" class="nav-link px-2 text-white"><font style="vertical-align: inherit;" (click)="lista()"><font style="vertical-align: inherit;"></font></font></a></li>
+          <li><a href="#" class="nav-link px-2 text-white"><font style="vertical-align: inherit;" (click)="Nuevo"><font style="vertical-align: inherit;"></font></font></a></li>
+          <li><a href="#" class="nav-link px-2 text-white"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font></font></a></li>
+          <li><a href="#" class="nav-link px-2 text-white"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font></font></a></li>
+        </ul>
+
+        <form class="col-10 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input type="search" class="form-control form-control-dark" placeholder="Búsqueda..." aria-label="Búsqueda">
+        </form>
+
+        <div class="text-end">
+          <button type="button" (click)="logOut()" class="btn btn-outline-light me-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cerrar Sesion</font></font></button>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  <br>
+  <h1 align="center">calculadora</h1>
+  <div>
+    <form action="">
+      <div class="container">
+        <h1></h1>
+        <form>
+          <div class="form-group">
+            <label>velocidad final</label>
+            <input type="number" class="form-control" placeholder="Escribe velocidad final"  name="final" />
+          </div>
+          <div class="form-group">
+            <label>aceleración</label>
+            <input type="number" class="form-control" placeholder="aceleración" name="aceleración" />
+          </div>
+          <div class="form-group">
+            <label>Tiempo</label>
+            <input type="number" class="form-control" placeholder="Tiempo" name="tiempo" />
+          </div>
+          <br>
+        
+          <button type="submit" class="btn btn-primary" >Calcular</button>
+        </form>
+        <br>
+        <p>Resultado: </p>
+      </div>
+    </form>
+  </div>
+  <section *ngIf="auth.user$ | async as user" class="py-5 text-center container">
+    
+  <div class="row py-lg-2">
+   <!-- <button class="btn btn-primary  btn-sm" id="inicio" mat-fab color="blue" (click)="showModal()" (dblclick)="final()">
+      Marcar 
+    </button>-->
+    <br>
+    <br>
+
+    <div class="col-lg-5 col-md-7 mx-auto">
+        <img [src]="user.picture" alt="150px" class="rounded">
+        <br>
+       <p>{{user.given_name}}</p>
+        <!-- <p>{{user.family_name}}</p>
+        <p>{{user.email}}</p>
+      <p class="lead text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{user | json}}</font></font></p>
+     -->
+    </div>
+  </div>
+</section>
+
+
